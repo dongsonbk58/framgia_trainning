@@ -12,9 +12,8 @@ class CustomTableViewController: UIViewController {
 
     var mang: [(String,String)]!
     @IBOutlet weak var tableviewmidle: UITableView!
-    
-    @IBAction func editing(_ sender: UIBarButtonItem) {
-        self.isEditing = !self.isEditing
+    @IBAction func btedit(_ sender: UIBarButtonItem) {
+         self.tableviewmidle.isEditing = !self.tableviewmidle.isEditing
     }
 
     override func viewDidLoad() {
@@ -23,7 +22,8 @@ class CustomTableViewController: UIViewController {
         tableviewmidle.delegate=self
         mang = [("iphone","a"),("asus","b"),("lg","c"),
                 ("samsung","d")]
-        // Do any additional setup after loading the view.
+        self.tableviewmidle.isEditing=false
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,6 +54,14 @@ extension CustomTableViewController: UITableViewDataSource,UITableViewDelegate {
         self.navigationController?.pushViewController(mh2, animated: true)
     }
     
+//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+//        return .none
+//    }
+//    
+//    func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+//        return false
+//    }
+    
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let itemToMove = mang[sourceIndexPath.row]
         mang.remove(at: sourceIndexPath.row)
@@ -61,25 +69,18 @@ extension CustomTableViewController: UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let more = UITableViewRowAction(style: .normal, title: "More") { action, index in
-            print("more button tapped")
-        }
-        more.backgroundColor = UIColor.lightGray
-        
-        let favorite = UITableViewRowAction(style: .normal, title: "Favorite") { action, index in
-            print("favorite button tapped")
-        }
-        favorite.backgroundColor = UIColor.orange
         
         let share = UITableViewRowAction(style: .normal, title: "Share") { action, index in
             print("share button tapped")
         }
         let delete = UITableViewRowAction(style: .normal, title: "delete") { action, index in
-            print("share button tapped")
+            self.mang.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
         }
+        delete.backgroundColor = UIColor.orange
         share.backgroundColor = UIColor.red
         
-        return [delete,share, favorite, more]
+        return [delete,share]
 
     }
     
@@ -92,14 +93,6 @@ extension CustomTableViewController: UITableViewDataSource,UITableViewDelegate {
         return true
     }
     
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.delete {
-            mang.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
-        }
-        
-    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CustomTableViewCell

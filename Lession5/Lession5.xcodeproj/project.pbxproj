@@ -15,6 +15,7 @@
 		2931356E2061881E00D9DDF1 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2931356D2061881E00D9DDF1 /* CustomTableViewCell.swift */; };
 		2931357020618A4000D9DDF1 /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2931356F20618A4000D9DDF1 /* CustomTableViewController.swift */; };
 		2931357220618D9800D9DDF1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2931357120618D9800D9DDF1 /* DetailViewController.swift */; };
+		298B677A2061FDDF005FA5AE /* LoadTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298B67792061FDDF005FA5AE /* LoadTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		2931356D2061881E00D9DDF1 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		2931356F20618A4000D9DDF1 /* CustomTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
 		2931357120618D9800D9DDF1 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		298B67792061FDDF005FA5AE /* LoadTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				2931356D2061881E00D9DDF1 /* CustomTableViewCell.swift */,
 				2931356F20618A4000D9DDF1 /* CustomTableViewController.swift */,
 				2931357120618D9800D9DDF1 /* DetailViewController.swift */,
+				298B67792061FDDF005FA5AE /* LoadTableViewController.swift */,
 				2931355F2061734D00D9DDF1 /* Main.storyboard */,
 				293135622061734D00D9DDF1 /* Assets.xcassets */,
 				293135642061734D00D9DDF1 /* LaunchScreen.storyboard */,
@@ -150,6 +153,7 @@
 				2931357220618D9800D9DDF1 /* DetailViewController.swift in Sources */,
 				2931355E2061734D00D9DDF1 /* ViewController.swift in Sources */,
 				2931355C2061734D00D9DDF1 /* AppDelegate.swift in Sources */,
+				298B677A2061FDDF005FA5AE /* LoadTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +315,7 @@
 				2931356C2061734D00D9DDF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
