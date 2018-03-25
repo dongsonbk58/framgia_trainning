@@ -83,6 +83,14 @@
                                     <action selector="btpostnofification:" destination="FlY-RD-XkL" eventType="touchUpInside" id="vjd-2Q-Qmb"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fl4-KV-QC0">
+                                <rect key="frame" x="120" y="444" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="demo sqlite"/>
+                                <connections>
+                                    <segue destination="847-Gp-wgK" kind="push" id="GZ5-JT-g1X"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -160,6 +168,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hii-QJ-Rde" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2558" y="36"/>
+        </scene>
+        <!--Sqlite View Controller-->
+        <scene sceneID="3zd-Ge-T0K">
+            <objects>
+                <viewController id="847-Gp-wgK" customClass="SqliteViewController" customModule="Lession7" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jut-FZ-CpV"/>
+                        <viewControllerLayoutGuide type="bottom" id="H2m-7v-n2D"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yQI-8u-KF8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="boz-bM-snq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="Cwx-sL-doz">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cwx-sL-doz" id="zDC-Gg-I4W">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="boz-bM-snq" secondAttribute="trailing" id="ZM7-f0-tIm"/>
+                            <constraint firstItem="H2m-7v-n2D" firstAttribute="top" secondItem="boz-bM-snq" secondAttribute="bottom" id="lkC-5o-MLN"/>
+                            <constraint firstItem="boz-bM-snq" firstAttribute="top" secondItem="Jut-FZ-CpV" secondAttribute="bottom" constant="-64" id="mrb-ph-EjG"/>
+                            <constraint firstItem="boz-bM-snq" firstAttribute="leading" secondItem="yQI-8u-KF8" secondAttribute="leading" id="sFK-Cm-ksU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="HoQ-Xy-URM"/>
+                    <connections>
+                        <outlet property="tbsqlite" destination="boz-bM-snq" id="GmR-9r-Kvg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dcR-xr-fs0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2558" y="794"/>
         </scene>
         <!--ghi chu-->
         <scene sceneID="ekF-N9-wBT">
